@@ -1,0 +1,16 @@
+# Ignore local design mockups and exports
+/Portfolio Website Design/
+
+# Node / dependency folders
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Vite cache
+.vite/
+
+# Editor/OS files
+.DS_Store
+*.log
