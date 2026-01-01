@@ -1,8 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
+import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
+import Home from "./components/sections/Home";
 
 function App() {
   return (
-    <>
-    </>
+    <Router>
+      <Box display="flex" flexDirection="column" minH="100vh">
+        <NavBar />
+        <Box as="main" flex="1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Home />} />
+            <Route path="/about" element={<Home />} />
+            <Route path="/contact" element={<Home />} />
+          </Routes>
+        </Box>
+        <Footer />
+      </Box>
+    </Router>
   );
 }
 
