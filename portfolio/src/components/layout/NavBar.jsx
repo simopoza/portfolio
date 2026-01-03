@@ -34,8 +34,6 @@ const NavBar = () => {
       right={0}
       bg="whiteAlpha.800"
       backdropFilter="saturate(180%) blur(6px)"
-      borderBottomWidth={1}
-      borderColor="gray.200"
       zIndex={50}
       py={3}
     >
@@ -65,6 +63,9 @@ const NavBar = () => {
                 px={{ base: 2, md: 3 }}
                 py={{ base: 1, md: 2 }}
                 _hover={{ color: "blue.600", textDecoration: "none" }}
+                _focus={{ boxShadow: "none", outline: "none" }}
+                _focusVisible={{ boxShadow: "none", outline: "none" }}
+                _active={{ bg: "transparent", outline: "none" }}
                 _after={{
                   content: '""',
                   position: "absolute",
@@ -97,7 +98,7 @@ const NavBar = () => {
 
       {/* Mobile Navigation (fallback when Collapse isn't available) */}
       {isOpen && (
-        <Box bg="white" borderTopWidth={1} borderColor="gray.200">
+        <Box>
           <Container maxW="7xl">
             <VStack align="stretch" spacing={2} py={3}>
               {navLinks.map((link) => (
@@ -108,7 +109,10 @@ const NavBar = () => {
                   py={2}
                   px={3}
                   borderRadius="md"
-                  _hover={{ bg: "gray.50", textDecoration: "none" }}
+                    _hover={{ bg: "gray.50", textDecoration: "none" }}
+                    _focus={{ boxShadow: "none", outline: "none" }}
+                    _focusVisible={{ boxShadow: "none", outline: "none" }}
+                    _active={{ bg: "transparent", outline: "none" }}
                   onClick={() => {
                     if (isOpen) onToggle();
                   }}

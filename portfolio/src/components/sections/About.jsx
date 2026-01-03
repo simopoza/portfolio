@@ -6,7 +6,7 @@ export default function About() {
   const skills = [
     {
       category: 'Frontend',
-      items: ['React', 'TypeScript', 'Tailwind CSS', 'Chakra UI', 'Next.js', 'Redux']
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'Chakra UI', 'Next.js', 'Zustand']
     },
     {
       category: 'Backend',
@@ -14,11 +14,11 @@ export default function About() {
     },
     {
       category: 'Database',
-      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Database Design', 'SQL Optimization']
+      items: ['MySQL', 'PostgreSQL', 'MongoDB', 'Database Design', 'SQL Optimization']
     },
     {
       category: 'Tools & Others',
-      items: ['Git', 'Docker', 'CI/CD', 'Testing', 'AWS', 'Agile/Scrum']
+      items: ['Git', 'Docker', 'Testing']
     }
   ];
 
