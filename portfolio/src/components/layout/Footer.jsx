@@ -5,8 +5,6 @@ import {
   HStack,
   VStack,
   Text,
-  Heading,
-  IconButton,
   Link,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
