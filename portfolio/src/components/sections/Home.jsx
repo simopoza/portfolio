@@ -53,14 +53,8 @@ console.log("HOME PAGE IS WORKING");
         maxW="container.xl"
         py={{ base: "80px", md: "110px" }}
       >
-        <VStack
-          as={motion.div}
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          spacing={7}
-          textAlign="center"
-        >
+        <motion.div initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <VStack spacing={7} textAlign="center">
           {/* Role Badge */}
           <Badge
             px={5}
@@ -149,17 +143,14 @@ console.log("HOME PAGE IS WORKING");
             </Button>
           </Stack>
         </VStack>
+        </motion.div>
       </Container>
 
       {/* Featured Projects Section */}
       <Box bg="gray.50" py={{ base: "50px", md: "60px" }}>
         <Container maxW="container.xl">
-          <Box as={motion.div}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <Box>
             <Heading
               as="h2"
               fontSize="24px"
@@ -177,15 +168,8 @@ console.log("HOME PAGE IS WORKING");
             >
               {featuredProjects.map((project, index) => (
                 <Box key={project.title} p={{ base: 2, md: 3 }}>
-                  <Box
-                    key={index}
-                    as={motion.div}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    p={0}
-                  >
+                  <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+                    <Box p={0}>
                     <ChakraLink
                       as={RouterLink}
                       to={`/projects/${project.title
@@ -257,6 +241,7 @@ console.log("HOME PAGE IS WORKING");
                   </Box>
                       </ChakraLink>
                     </Box>
+                  </motion.div>
                 </Box>
               ))}
             </SimpleGrid>
@@ -273,19 +258,16 @@ console.log("HOME PAGE IS WORKING");
                 View All Projects →
               </ChakraLink>
             </Box>
-          </Box>
+            </Box>
+          </motion.div>
         </Container>
       </Box>
 
       {/* Tech Stack Section */}
       <Box bg="white" py={{ base: "50px", md: "60px" }}>
         <Container maxW="container.xl">
-          <Box as={motion.div}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <Box>
           <Heading
             as="h2"
             fontSize="24px"
@@ -302,41 +284,25 @@ console.log("HOME PAGE IS WORKING");
           >
             {techStack.map((tech, index) => (
               <Box key={tech.name} p={{ base: 2, md: 3 }}>
-              <Box as={motion.div}
-                key={tech.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                bg="white"
-                p={6}
-                borderRadius="xl"
-                boxShadow="sm"
-                textAlign="center"
-                _hover={{ boxShadow: "md" }}
-              >
-                <Icon as={tech.icon} boxSize={10} mb={3} color={tech.color} />
-                <Text fontSize="14px" fontWeight="medium">
-                  {tech.name}
-                </Text>
-              </Box>
+                <motion.div key={tech.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
+                  <Box bg="white" p={6} borderRadius="xl" boxShadow="sm" textAlign="center" _hover={{ boxShadow: "md" }}>
+                    <Icon as={tech.icon} boxSize={10} mb={3} color={tech.color} />
+                    <Text fontSize="14px" fontWeight="medium">{tech.name}</Text>
+                  </Box>
+                </motion.div>
               </Box>
             ))}
           </SimpleGrid>
-        </Box>
+            </Box>
+          </motion.div>
         </Container>
       </Box>
 
       {/* About Preview Section */}
       <Box bg="gray.50" py={{ base: "60px", md: "80px" }}>
         <Container maxW="container.md">
-          <Box as={motion.div}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            textAlign="center"
-          >
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <Box textAlign="center">
             <Heading
               as="h2"
               fontSize="24px"
@@ -369,27 +335,15 @@ console.log("HOME PAGE IS WORKING");
             >
               Learn More About Me →
             </ChakraLink>
-          </Box>
+            </Box>
+          </motion.div>
         </Container>
       </Box>
 
       {/* CTA Section */}
       <Box maxW="1000px" mx="auto" py="80px" px="20px">
-        <Box
-          as={motion.div}
-          backgroundImage="linear-gradient(to right, #6366F1, #8B5CF6)"
-          backgroundRepeat="no-repeat"
-          backgroundSize="cover"
-          color="white"
-          p={{ base: "40px", md: "60px" }}
-          borderRadius="24px"
-          textAlign="center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          boxShadow="0px 40px 80px rgba(0,0,0,0.25)"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <Box backgroundImage="linear-gradient(to right, #6366F1, #8B5CF6)" backgroundRepeat="no-repeat" backgroundSize="cover" color="white" p={{ base: "40px", md: "60px" }} borderRadius="24px" textAlign="center" boxShadow="0px 40px 80px rgba(0,0,0,0.25)">
           <Heading fontSize="32px" mb="12px">
             Let’s Work Together
           </Heading>
@@ -410,7 +364,8 @@ console.log("HOME PAGE IS WORKING");
           >
             Get In Touch →
           </Button>
-        </Box>
+          </Box>
+        </motion.div>
       </Box>
     </Box>
   );
