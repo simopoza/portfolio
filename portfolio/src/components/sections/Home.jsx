@@ -16,6 +16,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SiReact, SiJavascript, SiChakraui, SiNodedotjs, SiNestjs, SiMysql } from "react-icons/si";
+import { FaArrowRight } from "react-icons/fa";
 import projects from "../../data/projects";
 
 // Note: avoid deprecated motion(component) usage. Use Chakra `as={motion.div}` instead.
@@ -48,17 +49,21 @@ console.log("HOME PAGE IS WORKING");
   return (
     <Box>
       {/* Hero Section */}
-      <Container maxW="container.lg" py={{ base: "60px", md: "110px" }} bg="white">
+      <Container
+        maxW="container.xl"
+        py={{ base: "80px", md: "110px" }}
+      >
         <VStack
           as={motion.div}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          spacing={6}
+          spacing={7}
           textAlign="center"
         >
+          {/* Role Badge */}
           <Badge
-            px={4}
+            px={5}
             py={2}
             bg="blue.50"
             color="blue.600"
@@ -69,52 +74,75 @@ console.log("HOME PAGE IS WORKING");
             Full-Stack Developer
           </Badge>
 
+          {/* Main Heading */}
           <Heading
             as="h1"
-            fontSize={{ base: "35px", md: "42px" }}
-            fontWeight="medium"
-            lineHeight="1.5"
+            fontSize={{ base: "34px", md: "44px" }}
+            lineHeight="1.3"
+            fontWeight="semibold"
+            color="gray.900"
+            maxW="800px"
           >
-            Hi, I'm{" "}
+            Hi, I’m{" "}
             <Box
               as="span"
-              bgGradient="linear(to-r, blue.600, purple.600)"
-              bgClip="text"
+              display="inline-block"
+              fontWeight="extrabold"
+              fontSize="inherit"
+              style={{
+                background: "linear-gradient(to right, #2563EB, #7C3AED)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
             >
               Mohammed Annahri
             </Box>
+
           </Heading>
 
+          {/* Description */}
           <Text
             fontSize={{ base: "16px", md: "18px" }}
             color="gray.600"
             maxW="650px"
           >
-            I build scalable, user-friendly web applications with modern
-            technologies. Passionate about creating elegant solutions to complex
-            problems and delivering exceptional user experiences.
+            A passionate Full-Stack Developer specializing in modern, scalable and
+            user-focused web applications. I enjoy solving complex problems and
+            creating clean, beautiful digital experiences.
           </Text>
 
+          {/* Buttons */}
           <Stack
             direction={{ base: "column", sm: "row" }}
             spacing={4}
-            pt={2}
+            pt={3}
             w={{ base: "full", sm: "auto" }}
+            justify="center"
           >
             <Button
               as={RouterLink}
               to="/projects"
-              colorScheme="brand"
               size="lg"
+              bg="blue.600"
+              color="white"
+              _hover={{ bg: "blue.700" }}
               w={{ base: "full", sm: "auto" }}
             >
               View Projects
+              <Box as="span" ml={2} fontWeight="normal" display="inline-flex" alignItems="center">
+                <FaArrowRight size={16} />
+              </Box>
             </Button>
+
             <Button
               as={RouterLink}
               to="/contact"
               variant="outline"
               size="lg"
+              borderColor="gray.300"
+              _hover={{ bg: "gray.50" }}
               w={{ base: "full", sm: "auto" }}
             >
               Contact Me
