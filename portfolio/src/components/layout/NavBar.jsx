@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import LogoCube from "./LogoCube";
 
 const NavBar = () => {
   const location = useLocation();
@@ -42,12 +43,12 @@ const NavBar = () => {
         <HStack justify="space-between">
           {/* Logo */}
           <ChakraLink as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
-            <HStack spacing={2} align="center">
-              <Box w={8} h={8} borderRadius="lg" bgGradient="linear(to-br, blue.600, purple.600)" />
-              <Text fontSize="16px" fontWeight="semibold" color="gray.900">
-                Mohammed Annahri
-              </Text>
-            </HStack>
+              <HStack spacing={3}>
+                <LogoCube />
+                <Text fontWeight="bold">
+                  Mohammed Annahri
+                </Text>
+              </HStack>
           </ChakraLink>
 
           {/* Desktop Navigation */}
