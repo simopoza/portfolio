@@ -8,6 +8,7 @@ import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import Projects from "./components/sections/Projects";
 import ProjectDetail from "./components/sections/ProjectDetail";
+import Experience from "./components/sections/Experience";
 
 function App() {
   function ScrollToTop() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

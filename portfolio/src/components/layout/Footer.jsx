@@ -39,6 +39,9 @@ export default function Footer() {
             <Link href="/projects" color="gray.300" _hover={{ color: "white" }}>
               Projects
             </Link>
+            <Link href="/experience" color="gray.300" _hover={{ color: "white" }}>
+              Experience
+            </Link>
             <Link href="/about" color="gray.300" _hover={{ color: "white" }}>
               About
             </Link>
