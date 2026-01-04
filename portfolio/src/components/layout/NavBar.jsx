@@ -51,7 +51,14 @@ const NavBar = () => {
       <Container maxW="7xl">
         <HStack justify="space-between">
           {/* Logo */}
-          <ChakraLink as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
+          <ChakraLink
+            as={RouterLink}
+            to="/"
+            _hover={{ textDecoration: "none" }}
+            _focus={{ boxShadow: "none", outline: "none" }}
+            _focusVisible={{ boxShadow: "none", outline: "none" }}
+            _active={{ boxShadow: "none", outline: "none" }}
+          >
               <HStack spacing={3}>
                 <LogoCube />
                 <Text fontWeight="bold">

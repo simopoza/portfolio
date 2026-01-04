@@ -33,19 +33,19 @@ export default function Footer() {
           <VStack align="flex-start" spacing="10px">
             <Text fontWeight="bold">Quick Links</Text>
 
-            <Link href="/" color="gray.300" _hover={{ color: "white" }}>
+            <Link href="/" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
               Home
             </Link>
-            <Link href="/projects" color="gray.300" _hover={{ color: "white" }}>
+            <Link href="/projects" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
               Projects
             </Link>
-            <Link href="/experience" color="gray.300" _hover={{ color: "white" }}>
+            <Link href="/experience" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
               Experience
             </Link>
-            <Link href="/about" color="gray.300" _hover={{ color: "white" }}>
+            <Link href="/about" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
               About
             </Link>
-            <Link href="/contact" color="gray.300" _hover={{ color: "white" }}>
+            <Link href="/contact" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
               Contact
             </Link>
           </VStack>
@@ -55,7 +55,7 @@ export default function Footer() {
             <Text fontWeight="bold">Connect</Text>
 
             <HStack spacing="10px">
-                <Link href="https://github.com/simopoza" isExternal>
+                <Link href="https://github.com/simopoza" isExternal target="_blank" rel="noopener noreferrer">
                   <Box
                     as="span"
                     w="40px"
@@ -72,7 +72,7 @@ export default function Footer() {
                   </Box>
                 </Link>
 
-              <Link href="https://www.linkedin.com/in/mohammed-annahri/" isExternal>
+                <Link href="https://www.linkedin.com/in/mohammed-annahri/" isExternal target="_blank" rel="noopener noreferrer">
                 <Box
                   as="span"
                   w="40px"
@@ -89,7 +89,7 @@ export default function Footer() {
                 </Box>
               </Link>
 
-              <Link href="mailto:annahrimohammed@gmail.com" isExternal>
+              <Link href="mailto:annahrimohammed@gmail.com" isExternal target="_blank" rel="noopener noreferrer">
                 <Box
                   as="span"
                   w="40px"
