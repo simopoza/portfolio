@@ -86,7 +86,7 @@ export default function Footer() {
                 </Box>
               </Link>
 
-              <Link href="mailto:annahrimohammed@gmail.com">
+              <Link href="mailto:annahrimohammed@gmail.com" isExternal>
                 <Box
                   as="span"
                   w="40px"

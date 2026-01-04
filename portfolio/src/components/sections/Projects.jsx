@@ -42,8 +42,6 @@ export default function Projects() {
                   <Box p={{ base: 3, md: 4 }}>
                     <Box>
                       <Box
-                        as={Link}
-                        href={project.live ?? project.github ?? '#'}
                         display="block"
                         bg="white"
                         borderRadius="16px"
@@ -72,14 +70,36 @@ export default function Projects() {
 
                           <HStack spacing={3} mt={4}>
                             {project.github && (
-                              <Button as={Link} href={project.github} isExternal size="sm" variant="outline">
+                              <Button
+                                as={Link}
+                                href={project.github}
+                                isExternal
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                size="sm"
+                                variant="outline"
+                                _focus={{ boxShadow: 'none', outline: 'none', textDecoration: 'none' }}
+                                _active={{ boxShadow: 'none', outline: 'none' }}
+                                _focusVisible={{ boxShadow: 'none', outline: 'none' }}
+                              >
                                 <Icon as={FaGithub} mr={2} boxSize={4} />
                                 Code
                               </Button>
                             )}
 
                             {project.live && (
-                              <Button as={Link} href={project.live} isExternal size="sm" variant="outline">
+                              <Button
+                                as={Link}
+                                href={project.live}
+                                isExternal
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                size="sm"
+                                variant="outline"
+                                _focus={{ boxShadow: 'none', outline: 'none', textDecoration: 'none' }}
+                                _active={{ boxShadow: 'none', outline: 'none' }}
+                                _focusVisible={{ boxShadow: 'none', outline: 'none' }}
+                              >
                                 <Icon as={FiExternalLink} mr={2} boxSize={4} />
                                 Demo
                               </Button>
