@@ -4,7 +4,7 @@ Professional portfolio website showcasing selected frontend and full-stack proje
 
 ## Live Demo
 
-- Production (Vercel): https://your-portfolio-url.vercel.app
+- Production (Vercel): https://mannahri-portfolio.vercel.app/
 
 If you haven't deployed yet, see the **Deployment** section below for a quick way to host the site on Vercel.
 
