@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import NavBar from "./components/layout/NavBar";
 import Footer from "./components/layout/Footer";
@@ -8,9 +9,17 @@ import Contact from "./components/sections/Contact";
 import Projects from "./components/sections/Projects";
 
 function App() {
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+    React.useEffect(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }, [pathname]);
+    return null;
+  }
   return (
     <Router>
       <Box display="flex" flexDirection="column" minH="100vh">
+        <ScrollToTop />
         <NavBar />
         <Box as="main" flex="1">
           <Routes>

@@ -36,6 +36,8 @@ const NavBar = () => {
       backdropFilter="saturate(180%) blur(6px)"
       zIndex={50}
       py={3}
+      borderBottomWidth="1px"
+      borderBottomColor="gray.200"
     >
       <Container maxW="7xl">
         <HStack justify="space-between">
