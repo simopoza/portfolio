@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {
   Box,
   Container,
@@ -5,7 +6,7 @@ import {
   Link as ChakraLink,
   Text,
   Icon,
-  IconButton,
+  Button,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -24,11 +25,18 @@ const NavBar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const { isOpen, onToggle } = useDisclosure();
+  const { open, onToggle } = useDisclosure();
+
+  useEffect(() => {
+    // debug: log menu open state so user/devtools can verify clicks
+    // eslint-disable-next-line no-console
+    console.log("NavBar open:", open);
+  }, [open]);
 
   return (
     <Box
       as="nav"
+      data-menu-open={open}
       position="fixed"
       top={0}
       left={0}
@@ -88,41 +96,66 @@ const NavBar = () => {
           </HStack>
 
           {/* Mobile menu button */}
-          <IconButton
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+          <Button
+            aria-label={open ? "Close menu" : "Open menu"}
             display={{ base: "flex", md: "none" }}
             onClick={onToggle}
-            icon={isOpen ? <FiX /> : <FiMenu />}
             variant="ghost"
             size="md"
-          />
+            p={2}
+          >
+            {open ? <FiX size={24} /> : <FiMenu size={24} />}
+          </Button>
         </HStack>
       </Container>
 
-      {/* Mobile Navigation (fallback when Collapse isn't available) */}
-      {isOpen && (
-        <Box>
-          <Container maxW="7xl">
-            <VStack align="stretch" spacing={2} py={3}>
+      {/* Mobile Navigation */}
+      {open && (
+        <Box
+          display={{ base: "block", md: "none" }}
+          position="fixed"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          height="100vh"
+          bg="white"
+          boxShadow="lg"
+          zIndex={99999}
+        >
+          <Container maxW="7xl" pt={6}>
+            <Button
+              aria-label="Close menu"
+              position="absolute"
+              top={4}
+              right={4}
+              variant="ghost"
+              size="md"
+              onClick={onToggle}
+              p={2}
+            >
+              <FiX size={24} />
+            </Button>
+            <VStack align="stretch" spacing={1} pt={12}>
               {navLinks.map((link) => (
                 <ChakraLink
                   key={link.path}
                   as={RouterLink}
                   to={link.path}
-                  py={2}
-                  px={3}
+                  py={4}
+                  px={4}
                   borderRadius="md"
-                    _hover={{ bg: "gray.50", textDecoration: "none" }}
-                    _focus={{ boxShadow: "none", outline: "none" }}
-                    _focusVisible={{ boxShadow: "none", outline: "none" }}
-                    _active={{ bg: "transparent", outline: "none" }}
-                  onClick={() => {
-                    if (isOpen) onToggle();
-                  }}
+                  bg={location.pathname === link.path ? "blue.50" : "transparent"}
+                  color={location.pathname === link.path ? "blue.600" : "gray.700"}
+                  fontWeight="medium"
+                  fontSize="lg"
+                  _hover={{ bg: "gray.50", textDecoration: "none" }}
+                  _focus={{ boxShadow: "none", outline: "none" }}
+                  _focusVisible={{ boxShadow: "none", outline: "none" }}
+                  _active={{ bg: "transparent", outline: "none" }}
+                  onClick={onToggle}
                 >
-                  <Text color={location.pathname === link.path ? "blue.600" : "gray.700"} fontWeight="medium">
-                    {link.name}
-                  </Text>
+                  {link.name}
                 </ChakraLink>
               ))}
             </VStack>
