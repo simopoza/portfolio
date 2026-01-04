@@ -107,14 +107,26 @@ export default function Contact() {
                                                         <Icon as={IconComp} color="#2563EB" boxSize={5} />
                                                     </Box>
 
-                                                    <Box>
+                                                    <Box minW={0}>
                                                         <Text color="gray.500" mb={1} fontSize="sm">{info.label}</Text>
                                                         {info.href ? (
-                                                            <Text as="a" href={info.href} target="_blank" rel="noopener noreferrer" color="gray.900" _hover={{ color: 'blue.600' }} transition="colors 0.2s">
+                                                            <Text
+                                                                as="a"
+                                                                href={info.href}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                color="gray.900"
+                                                                _hover={{ color: 'blue.600' }}
+                                                                transition="colors 0.2s"
+                                                                maxW="100%"
+                                                                overflowWrap="anywhere"
+                                                                wordBreak="break-word"
+                                                                whiteSpace="normal"
+                                                            >
                                                                 {info.value}
                                                             </Text>
                                                         ) : (
-                                                            <Text color="gray.900">{info.value}</Text>
+                                                            <Text color="gray.900" maxW="100%" overflowWrap="anywhere" wordBreak="break-word" whiteSpace="normal">{info.value}</Text>
                                                         )}
                                                     </Box>
                                                 </Box>

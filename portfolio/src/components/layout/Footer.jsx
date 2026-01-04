@@ -16,9 +16,9 @@ export default function Footer() {
   return (
     <Box bg="#0B1220" color="white" mt={0} as="footer">
       <Container maxW="1200px" py="40px">
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing="60px">
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 12, md: 60 }}>
           {/* Left Section */}
-          <HStack align="flex-start" spacing="12px">
+          <HStack align="flex-start" spacing="12px" mb={{ base: 8, md: 0 }}>
             <LogoCube size="34px" radius="12px" from="#6366F1" to="#8B5CF6" />
             <VStack align="flex-start" spacing="8px">
               <Text fontWeight="bold">Mohammed Annahri</Text>
@@ -30,7 +30,7 @@ export default function Footer() {
           </HStack>
 
           {/* Quick Links */}
-          <VStack align="flex-start" spacing="10px">
+          <VStack align="flex-start" spacing="10px" mb={{ base: 8, md: 0 }}>
             <Text fontWeight="bold">Quick Links</Text>
 
             <Link href="/" color="gray.300" _hover={{ color: "white" }} _focus={{ boxShadow: "none", outline: "none" }} _active={{ boxShadow: "none", outline: "none" }}>
@@ -51,7 +51,7 @@ export default function Footer() {
           </VStack>
 
           {/* Connect */}
-          <VStack align="flex-start" spacing="14px">
+          <VStack align="flex-start" spacing="14px" mb={{ base: 8, md: 0 }}>
             <Text fontWeight="bold">Connect</Text>
 
             <HStack spacing="10px">
