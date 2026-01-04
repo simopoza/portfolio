@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
+import Projects from "./components/sections/Projects";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <Box as="main" flex="1">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
