@@ -7,6 +7,7 @@ import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 import Projects from "./components/sections/Projects";
+import ProjectDetail from "./components/sections/ProjectDetail";
 
 function App() {
   function ScrollToTop() {
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

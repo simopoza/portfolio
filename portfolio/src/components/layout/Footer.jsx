@@ -14,8 +14,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box bg="#0B1220" color="white" mt={20} as="footer">
-      <Container maxW="1200px" py="60px">
+    <Box bg="#0B1220" color="white" mt={0} as="footer">
+      <Container maxW="1200px" py="40px">
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing="60px">
           {/* Left Section */}
           <HStack align="flex-start" spacing="12px">
@@ -107,7 +107,7 @@ export default function Footer() {
         </SimpleGrid>
 
         {/* Copyright */}
-        <Text textAlign="center" color="gray.500" fontSize="14px" mt="40px">
+        <Text textAlign="center" color="gray.500" fontSize="14px" mt="24px">
           © {currentYear} Mohammed Annahri. All rights reserved.
         </Text>
       </Container>
