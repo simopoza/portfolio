@@ -9,6 +9,7 @@ import Contact from "./components/sections/Contact";
 import Projects from "./components/sections/Projects";
 import ProjectDetail from "./components/sections/ProjectDetail";
 import Experience from "./components/sections/Experience";
+import NotFound from "./components/sections/NotFound";
 
 function App() {
   function ScrollToTop() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
         <Footer />
